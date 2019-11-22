@@ -1,6 +1,6 @@
 # MySQL cheatsheet
 
-I have even uploaded the .sql file which you can run and directly run them in the sql prompt.
+I have even uploaded the .sql file which you can download and directly run them in the sql prompt.
 
 ### General Commands
 To run sql files
@@ -103,4 +103,36 @@ drop table department;
 #### Drop Database
 ```sql
 drop database cheatsheet;
+```
+## Data Manipulation Language (DMl)
+
+#### Insertion (Complete)
+```sql
+insert into employee (employee_id, first_name, last_name, dept_number, age, salary) values (1, "Anurag", "Peddi", 1, 20, 93425.63);
+
+insert into employee values (2, "Anuhya", "Peddi", 2, 20, 83425.63);
+```
+#### Insertion (Partial)
+```sql
+insert into employee (employee_id, first_name) values (3, "Vageesh");
+```
+
+#### Updating all rows
+```sql
+update employee set salary = 1.1 * salary;
+```
+
+#### Updating a specified row
+```sql
+update employee set salary = 1.2 * salary where employee_id = 1;
+```
+
+#### Delete a specified row
+```sql
+delete from employee where employee_id = 2;
+```
+
+#### Delete all rows
+```sql
+delete from employee;
 ```
