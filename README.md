@@ -8,7 +8,7 @@ To run sql files
 source <filename>.sql;
 ```
 
-## Data Definition Language (DDl)
+## Data Definition Language (DDL)
 
 #### Create Database
 ```sql
@@ -104,7 +104,7 @@ drop table department;
 ```sql
 drop database cheatsheet;
 ```
-## Data Manipulation Language (DMl)
+## Data Manipulation Language (DML)
 
 #### Insertion (Complete)
 ```sql
@@ -135,4 +135,21 @@ delete from employee where employee_id = 2;
 #### Delete all rows
 ```sql
 delete from employee;
+```
+
+## Data Query Language (DQL)
+
+#### Display Table
+```sql
+select * from employee;
+```
+
+#### Select only specified columns
+```sql
+select employee_id, first_name from employee;
+```
+
+#### Select only few rows
+```sql
+select employee_id, first_name from employee where age > 25;
 ```
