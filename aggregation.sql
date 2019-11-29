@@ -29,7 +29,7 @@ select sum(population) from city group by population;
 select avg(population) from city group by population;
 
 -- count function
-select count(name) from city group by name;
+select district, count(district) from city group by district;
 
 -- maximum function
 select max(population) from city group by population;
