@@ -250,3 +250,16 @@ select stddev(population) from city group by population;
 ```sql
 select group_concat(population) from city group by population;
 ```
+
+## Procedure
+
+#### Creating procedure
+```sql
+create procedure display_dbs()
+show databases;
+```
+
+#### Calling procedure
+```sql
+call display_dbs();
+```
