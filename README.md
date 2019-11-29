@@ -228,7 +228,7 @@ select avg(population) from city group by population;
 
 #### Count function
 ```sql
-select count(name) from city group by name;
+select district, count(district) from city group by district;
 ```
 
 #### Maximum function
@@ -262,4 +262,35 @@ show databases;
 #### Calling procedure
 ```sql
 call display_dbs();
+```
+
+## Transaction
+
+#### Begin transaction
+```sql
+start transaction;
+```
+
+#### Create savepoint
+```sql
+savepoint sv_pt;
+```
+
+```sql
+delete from city;       -- changing data in table
+```
+
+#### Rollback
+```sql
+rollback to sv_pt;
+```
+
+#### Releasing savepoint
+```sql
+release savepoint sv_pt;
+```
+
+#### Commiting changes
+```sql
+commit;
 ```
