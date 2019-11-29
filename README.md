@@ -153,3 +153,30 @@ select employee_id, first_name from employee;
 ```sql
 select employee_id, first_name from employee where age > 25;
 ```
+
+## Views
+
+#### Create a view
+```sql
+create view personal_info as select first_name, last_name, age from employees;
+```
+
+#### Displaying view
+```sql
+select * from personal_info;
+```
+
+#### Updating in view
+```sql
+update personal_info set salary = 1.1 * salary;
+```
+
+#### Deleting record from view
+```sql
+delete from personal_info where age < 40;
+```
+
+#### Droping a view
+```sql
+drop view personal_info;
+```
