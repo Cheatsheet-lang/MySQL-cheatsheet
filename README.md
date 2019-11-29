@@ -213,3 +213,40 @@ select e.fname, p.pname from employees as e left outer join project as p on e.ei
 ```sql
 select e.fname, p.pname from employees as e right outer join project as p on e.eid = p.eid;
 ```
+
+## Aggregation
+
+#### Sum function
+```sql
+select sum(population) from city group by population;
+```
+
+#### Average function
+```sql
+select avg(population) from city group by population;
+```
+
+#### Count function
+```sql
+select count(name) from city group by name;
+```
+
+#### Maximum function
+```sql
+select max(population) from city group by population;
+```
+
+#### Minimum function
+```sql
+select min(population) from city group by population;
+```
+
+#### Standard deviation function
+```sql
+select stddev(population) from city group by population;
+```
+
+#### Group concat function
+```sql
+select group_concat(population) from city group by population;
+```
