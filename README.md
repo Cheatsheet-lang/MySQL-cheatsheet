@@ -137,6 +137,16 @@ delete from employee where employee_id = 2;
 delete from employee;
 ```
 
+#### Enabling foreign key checks
+```sql
+set foreign_key_checks = 1;
+```
+
+#### Disabling foreign key checks
+```sql
+set foreign_key_checks = 0;
+```
+
 ## Data Query Language (DQL)
 
 #### Display Table
@@ -179,4 +189,27 @@ delete from personal_info where age < 40;
 #### Droping a view
 ```sql
 drop view personal_info;
+```
+
+## Joins
+#### Inner join
+```sql
+select e.fname, p.pname from employees as e inner join project as p on e.eid = p.eid;
+```
+
+#### Full outer join
+```sql
+select e.fname, p.pname from employees as e left outer join project as p on e.eid = p.eid
+union
+select e.fname, p.pname from employees as e right outer join project as p on e.eid = p.eid;
+```
+
+#### Left outer join
+```sql
+select e.fname, p.pname from employees as e left outer join project as p on e.eid = p.eid;
+```
+
+#### Right outer join
+```sql
+select e.fname, p.pname from employees as e right outer join project as p on e.eid = p.eid;
 ```
