@@ -264,6 +264,11 @@ show databases;
 call display_dbs();
 ```
 
+#### Drop procedure
+```sql
+drop procedure display_dbs;
+```
+
 ## Transaction
 
 #### Begin transaction
