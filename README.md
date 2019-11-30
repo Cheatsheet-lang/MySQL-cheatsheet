@@ -311,3 +311,39 @@ create table emp_dup like employee;
 ```sql
 create table emp_dup select * from employee;
 ```
+
+## Programming
+
+#### Declare variables
+```sql
+set @num = 10;
+set @name = 'Anurag';
+```
+
+#### Print them
+```sql
+select @name;
+```
+
+#### For loop
+```sql
+set @n = 21;
+select repeat("* ", @n := @n - 1) from information_schema.tables where @n > 0;
+```
+
+## Miscellaneous
+
+#### Repeated concatenation
+```sql
+select repeat("* ", 20);
+```
+
+#### Random float
+```sql
+select rand();
+```
+
+#### Typecast to int
+```sql
+select cast(23.01245 as signed);
+```
