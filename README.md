@@ -163,7 +163,14 @@ select employee_id, first_name from employee;
 ```sql
 select employee_id, first_name from employee where age > 25;
 ```
-
+#### Duplicate a Table Schema
+```sql
+create table table_name like old_table;
+````
+#### Duplicate a Table
+````sql
+create table table_name select * from old_table;
+````
 ## Views
 
 #### Create a view
