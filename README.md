@@ -352,3 +352,13 @@ select rand();
 ```sql
 select cast(23.01245 as signed);
 ```
+
+#### Extract Month
+```sql
+select month("1998-12-30");
+```
+
+#### Extract Year
+```sql
+select year("1998-12-30");
+```
