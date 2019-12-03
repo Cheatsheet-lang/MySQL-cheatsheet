@@ -348,7 +348,7 @@ select repeat("* ", 20);
 select rand();
 ```
 
-#### Typecast to int
+#### Typecast to Int
 ```sql
 select cast(23.01245 as signed);
 ```
