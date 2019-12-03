@@ -333,6 +333,11 @@ select repeat("* ", @n := @n - 1) from information_schema.tables where @n > 0;
 
 ## Miscellaneous
 
+#### Round
+```sql
+select round(3.141596, 3);
+```
+
 #### Repeated concatenation
 ```sql
 select repeat("* ", 20);
