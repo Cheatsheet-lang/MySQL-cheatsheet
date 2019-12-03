@@ -195,6 +195,10 @@ drop view personal_info;
 #### Inner join
 ```sql
 select e.fname, p.pname from employees as e inner join project as p on e.eid = p.eid;
+
+-- or
+
+select e.fname, p.pname from employees as e join project as p on e.eid = p.eid;
 ```
 
 #### Full outer join
@@ -212,6 +216,16 @@ select e.fname, p.pname from employees as e left outer join project as p on e.ei
 #### Right outer join
 ```sql
 select e.fname, p.pname from employees as e right outer join project as p on e.eid = p.eid;
+```
+
+#### Left outer join - inner join
+```sql
+select e.fname, p.pname from employees as e left outer join project as p on e.eid = p.eid where p.pname is null;
+```
+
+#### Right outer join - inner join
+```sql
+select e.fname, p.pname from employees as e right outer join project as p on e.eid = p.eid where e.fname is null;
 ```
 
 ## Aggregation
@@ -351,6 +365,11 @@ select rand();
 #### Typecast to Int
 ```sql
 select cast(23.01245 as signed);
+```
+
+#### Concatenation
+```sql
+select concat("Mahesh", " ", "Chandra", " ", "Duddu", "!");
 ```
 
 #### Extract Month
