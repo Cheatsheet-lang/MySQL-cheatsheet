@@ -164,6 +164,46 @@ select employee_id, first_name from employee;
 select employee_id, first_name from employee where age > 25;
 ```
 
+### Where Clause
+
+#### Greater than(>)
+```sql
+select * from employee where salary > 3100;
+```
+
+#### Greater than equal to(>=)
+```sql
+select * from employee where salary >= 3100;
+```
+
+#### Less than(<)
+```sql
+select * from employee where salary < 4500;
+```
+
+#### Less than equal to(<=)
+```sql
+select * from employee where salary <= 4350;
+```
+
+#### Range
+```sql
+select * from employee where salary > 3000 and salary < 4000;
+```
+
+#### BETWEEN and AND
+```sql
+select * from employee where salary between 3000 and 4000;
+```
+
+#### Like Operator
+```sql
+select * from employee where name like '%Jo%';          -- Similar to *Jo* in regrex
+```
+```sql
+select * from employee where name like 'Jo_';           -- Similar to Jo. in regrex
+```
+
 ## Views
 
 #### Create a view
