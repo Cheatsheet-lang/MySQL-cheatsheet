@@ -366,6 +366,15 @@ create table emp_dup like employee;
 create table emp_dup select * from employee;
 ```
 
+## Access Controls
+
+#### Set new password to a user
+```sql
+use mysql;
+update user set authentication_string=PASSWORD("<new2-password>") where User='<user>';
+flush privileges;
+```
+
 ## Programming
 
 #### Declare variables
