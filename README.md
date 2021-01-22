@@ -368,6 +368,96 @@ create table emp_dup like employee;
 create table emp_dup select * from employee;
 ```
 
+## Access Controls
+
+#### Creating New User
+```sql
+CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+```
+the hostname part is set to `localhost`, so the user will be able to connect to the MySQL server only from the localhost.  
+To grant access from another host, change the hostname part with the remote machine IP.  
+```sql
+CREATE USER 'username'@'172.8.10.5' IDENTIFIED BY 'user_password';
+```
+To create a user that can connect from any host, '%' is used in the hostname part:
+```sql
+CREATE USER 'username'@'%' IDENTIFIED BY 'user_password';
+```
+
+#### Grant All Permissions
+```sql
+GRANT ALL PRIVILEGES ON * . * TO 'username'@'localhost';
+```
+Asterisks(\*) refers to the database and table names respectively.  
+By using asterisks we can give access of all the databases **or** tables to the user. 
+
+#### Flush Privileges
+```sql
+FLUSH PRIVILEGES
+```
+All the changes won't be in effect unless this query is fired.
+
+#### Specific User Permissions
+```sql
+GRANT type_of_permission ON database_name.table_name TO 'username'@'localhost';
+```
+`type_of_permission` may have one of these value: 
+* **ALL PRIVILEGES** - Allows user full access to a designated database (or if no database is selected, global access across the system).
+* **CREATE** - allows them to create new tables or databases.
+* **DROP** - allows them to them to delete tables or databases.
+* **DELETE** - allows them to delete rows from tables.
+* **INSERT** - allows them to insert rows into tables.
+* **SELECT** - allows them to use the `SELECT` command to read through databases.
+* **UPDATE** - allow them to update table rows.
+* **GRANT OPTION** - allows them to grant or remove other users’ privileges.  
+Multiple permissions are given with commas.
+
+#### Revoking permissions
+```sql
+REVOKE type_of_permission ON database_name.table_name FROM 'username'@'localhost';
+```
+
+#### Show User's Current Permissions
+```sql
+SHOW GRANTS FOR 'username'@'localhost';
+```
+
+#### Delete a User
+```sql
+DROP USER 'username'@'localhost';
+```
+
+#### Set new password to a user
+```sql
+use mysql;
+update user set authentication_string=PASSWORD("<new2-password>") where User='<user>';
+flush privileges;
+```
+
+## Reset Root Password
+Stop MySQL service 
+```
+sudo systemctl stop mysql
+```
+Restart MySQL service without loading grant tables
+```bash
+sudo mysqld_safe --skip-grant-tables &
+```
+The apersand (&) will cause the program to run in the background and `--skip-grant-tables` enables everyone to to connect to the database server without a password and with all privileges granted.
+Login to shell
+```
+mysql -u root
+```
+Set new password for root
+```sql
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'MY_NEW_PASSWORD';
+FLUSH PRIVILEGES;
+```
+Stop and start the server once again
+```
+mysqladmin -u root -p shutdown
+sudo systemctl start mysql
+```
 ## Programming
 
 #### Declare variables
