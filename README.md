@@ -305,6 +305,8 @@ select stddev(population) from city group by population;
 select group_concat(population) from city group by population;
 ```
 
+> Only COUNT function considers NULL values
+
 ## Procedure
 
 #### Creating procedure
