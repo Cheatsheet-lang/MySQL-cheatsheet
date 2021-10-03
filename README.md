@@ -8,6 +8,92 @@ To run sql files
 source <filename>.sql;
 ```
 
+## Data Types
+
+#### Integers
+
+```sql
+INT
+```
+```sql
+TINYINT
+```
+```sql
+SMALLINT
+```
+```sql
+MEDIUMINT
+```
+```sql
+BIGINT
+```
+
+#### Float
+
+```sql
+FLOAT(M,D)
+```
+
+#### Double
+
+```sql
+DOUBLE(M,D)
+```
+
+#### Decimal
+
+```sql
+DECIMAL(M,D)
+```
+
+#### Date
+
+```sql
+DATE -- Format - (YYYY-MM-DD)
+```
+
+#### Date Time
+
+```sql
+DATETIME -- Format - (YYYY-MM-DD HH:MM:SS)
+```
+
+#### Time
+
+```sql
+TIME -- Format - (HH:MM:SS)
+```
+
+#### String
+
+```sql
+CHAR(M)
+```
+
+```sql
+VARCHAR(M)
+```
+
+```sql
+BLOB or TEXT
+```
+
+## Comments
+
+```sql
+/* Multi
+line
+comment */
+```
+
+```sql
+# Single Line Comment
+```
+
+```sql
+-- Single Line Comment
+```
+
 ## Data Definition Language (DDL)
 
 #### Create Database
