@@ -282,6 +282,11 @@ select * from employee where salary > 3000 and salary < 4000;
 select * from employee where salary between 3000 and 4000;
 ```
 
+### ORDER BY Clause
+```sql
+select * from employee ORDER BY salary DESC;
+```
+
 #### Like Operator
 ```sql
 select * from employee where name like '%Jo%';          -- Similar to *Jo* in regrex
