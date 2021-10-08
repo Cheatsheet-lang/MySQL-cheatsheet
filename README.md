@@ -282,6 +282,16 @@ select * from employee where salary > 3000 and salary < 4000;
 select * from employee where salary between 3000 and 4000;
 ```
 
+#### Null
+```sql
+select * from employee where salary is NULL;
+```
+
+#### Not null
+```sql
+select * from employee where salary is NOT NULL;
+```
+
 ### ORDER BY Clause
 ```sql
 select * from employee ORDER BY salary DESC;
