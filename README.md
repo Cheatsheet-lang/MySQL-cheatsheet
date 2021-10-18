@@ -282,6 +282,11 @@ select * from employee where salary > 3000 and salary < 4000;
 select * from employee where salary between 3000 and 4000;
 ```
 
+### OR
+```sql
+select * from employee where salary = 3000 or salary = 4000;
+```
+
 #### Null
 ```sql
 select * from employee where salary is NULL;
