@@ -462,6 +462,56 @@ release savepoint sv_pt;
 commit;
 ```
 
+## Constraints
+
+#### Not Null
+```sql
+alter table Employee
+change
+    Age
+    Age int NOT NULL;
+```
+
+#### Unique
+```sql
+alter table Employee
+add constraint u_q unique(ID);
+```
+```sql
+alter table Employee -- drop the constraint
+drop constraint u_q;
+```
+
+#### Primary Key
+```sql
+alter table Employee
+add constraint p_k primary key(ID);
+```
+```sql
+alter table Employee -- drop the constraint
+drop constraint p_k;
+```
+
+#### Check
+```sql
+alter table Employee
+add constraint Age check (age>=30);
+```
+```sql
+alter table Employee -- drop the constraint
+drop check Age;
+```
+
+#### Default
+```sql
+alter table Employee
+alter Age set default 10;
+```
+```sql
+alter table Employee -- drop the constraint
+alter Age drop default;
+```
+
 ## Cloning
 
 #### Duplicate a Table Schema
